@@ -1,23 +1,17 @@
-//UpgradeEX* {"name":"LlsePlugins","platform":"github","repo":"LiteLScript-Dev\/LXL-Plugins","currentRelease":"v1.0.0"} */
 // 文件名：BehaviorLog.lxl.js
-// 文件功能：LXL平台下BehaviorLog行为监控日志
+// 文件功能：LLSE平台下BehaviorLog行为监控日志
 // 作者：yqs112358
 // 首发平台：MineBBS
 
-var _VER = [2, 1, 4];
+var _VER = [2, 1, 5];
 var _CONFIG_PATH = './plugins/BehaviorLog/config.json';
 var _SHOW_ERROR_INFO = false;
 
-if (!lxl.requireVersion(0, 5, 3))
-    throw new Error("\n\n【加载失败】LXL版本过旧！请升级你的LXL版本到0.5.3及以上再使用此插件\n");
-
-if (lxl.requireVersion(2, 1, 3))
-    lxl.registerPlugin("BehaviorLog", "Behavior Log for LiteLoaderBDS", _VER, { "GitHub": "https://github.com/LiteLScript-Dev/LXL-Plugins" });
+ll.registerPlugin("BehaviorLog", "BehaviorLog plugin for LiteLoaderBDS", _VER, { "GitHub": "https://github.com/YQ-LL-Plugins/LLSE-BehaviorLog" });
 
 var _DEFAULT_CONFIG_FILE = String.raw
     `{
     "ShowLogInConsole": 1,
-    "Language":"zh-cn",
     "Settings": {
         "onPreJoin": {
             "LogToFile": 1,
@@ -282,8 +276,9 @@ const i18n = {
         return output;
     },
     reload() {
-        if (file.exists("./plugins/BehaviorLog/i18n/" + conf["Language"] + ".json")) {
-            this.data = data.parseJson(File.readFrom("./plugins/BehaviorLog/i18n/" + conf["Language"] + ".json"));
+        let lang = ll.language.startsWith("zh") ? "zh-cn" : "en-us";
+        if (file.exists("./plugins/BehaviorLog/i18n/" + lang + ".json")) {
+            this.data = data.parseJson(File.readFrom("./plugins/BehaviorLog/i18n/" + lang + ".json"));
         }
     }
 };
@@ -380,7 +375,7 @@ function writeLog(logToFile, logToConsole, NoOutputContent, event, dim, doer, dx
     if (logToFile)
         fileQueue.push(logStr);
     if (conf.ShowLogInConsole && logToConsole) {
-        logStr = '[' + system.getTimeStr() + '][' + event + '] ';
+        logStr = '[' + event + '] ';
         if (dim != '')
             logStr += i18n.$t("common.at") + dim + '  ';
         if (doer != '')
@@ -402,7 +397,7 @@ function writeLog(logToFile, logToConsole, NoOutputContent, event, dim, doer, dx
 function writeLogExported(event, dim, doer, dx, dy, dz, target, tx, ty, tz, notes, logToConsole, logToFile) {
     writeLog(logToFile, logToConsole, [], event, dim, doer, dx, dy, dz, target, tx, ty, tz, notes);
 }
-lxl.export(writeLogExported, "BehaviorLog_WriteLog");
+ll.export(writeLogExported, "BehaviorLog_WriteLog");
 
 //监控部分
 var settings = conf.Settings;
@@ -1290,5 +1285,4 @@ mc.regConsoleCmd("behaviorlog", "Contorl BehaviorLog", function (args) {
 
 log(i18n.$t("info.log") + _VER[0] + "." + _VER[1] + "." + _VER[2]);
 log(i18n.$t("info.configD") + _CONFIG_PATH);
-log('作者：yqs112358  发布平台：MineBBS');
-log('联系作者可前往MineBBS论坛');
+log('Author：yqs112358   Publised at MineBBS');
