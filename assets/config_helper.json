@@ -1,0 +1,293 @@
+{
+    //控制台输出总开关：是否输出到行为日志到控制台
+    //如不需要控制台日志，可以一键关闭
+    "ShowLogInConsole": 1,
+
+    //各设置项分别设置
+    "Settings": {
+        //玩家开始进服
+        "onPreJoin": {
+            "LogToFile": 1,         //是否记录此项行为到日志文件
+            "LogToConsole": 1,      //是否记录此项行为到控制台
+            "NoOutputContent": []   //如果输出内容中含有这里数组中的字符串，此条日志将不会被输出
+        },
+        //玩家完全进服
+        "onJoin": {
+            "LogToFile": 1,         //是否记录此项行为到日志文件
+            "LogToConsole": 1,      //是否记录此项行为到控制台
+            "NoOutputContent": []   //如果输出内容中含有这里数组中的字符串，此条日志将不会被输出
+        },
+        //玩家离开
+        "onLeft": {
+            "LogToFile": 1,         //其余同上
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //玩家重生
+        "onRespawn": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //玩家死亡
+        "onPlayerDie": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //玩家使用命令
+        "onPlayerCmd": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //玩家聊天
+        "onChat": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": [
+                "{\"rawtext\":[{"       //默认设置：过滤机器人控制台刷屏
+            ]
+        },
+        //玩家切换维度
+        "onChangeDim": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //玩家跳跃
+        "onJump": {
+            "LogToFile": 0,             //记录默认关闭
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //玩家潜行
+        "onSneak": {
+            "LogToFile": 0,
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //玩家攻击
+        "onAttack": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //玩家使用物品
+        "onUseItem": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //玩家使用物品点击方块
+        "onUseItemOn": {
+            "LogToFile": 0,
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //玩家捡起物品
+        "onTakeItem": {
+            "LogToFile": 0,
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //玩家丢出物品
+        "onDropItem": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //玩家吃食物
+        "onEat": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //玩家开始破坏方块
+        "onStartDestroyBlock": {
+            "LogToFile": 0,
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //玩家完全破坏方块
+        "onDestroyBlock": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //玩家放置方块
+        "onPlaceBlock": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //玩家打开容器
+        "onOpenContainer": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //玩家关闭容器
+        "onCloseContainer": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //玩家物品栏改变
+        "onInventoryChange": {
+            "LogToFile": 0,
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //玩家盔甲栏改变
+        "onSetArmor": {
+            "LogToFile": 0,
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //玩家使用重生锚
+        "onUseRespawnAnchor": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //玩家打开容器UI
+        "onOpenContainerScreen": {
+            "LogToFile": 0,
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //生物死亡
+        "onMobDie": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //生物受伤
+        "onMobHurt": {
+            "LogToFile": 0,
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //实体爆炸
+        "onExplode": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //弹射物击中实体
+        "onProjectileHitEntity": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //凋零破坏方块
+        "onWitherBossDestroy": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //生物骑乘
+        "onRide": {
+            "LogToFile": 0,
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //生物踩踏压力板
+        "onStepOnPressurePlate": {
+            "LogToFile": 0,
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //玩家与方块互动
+        "onBlockInteracted": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //床爆炸
+        "onBedExplode": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //重生锚爆炸
+        "onRespawnAnchorExplode": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //方块被爆炸摧毁
+        "onBlockExploded": {
+            "LogToFile": 0,
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //命令方块执行命令
+        "onCmdBlockExecute": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //容器内容改变
+        "onContainerChange": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //弹射物击中方块
+        "onProjectileHitBlock": {
+            "LogToFile": 0,
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //发生红石更新
+        "onRedStoneUpdate": {
+            "LogToFile": 0,
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //漏斗送出物品
+        "onHopperPushOut": {
+            "LogToFile": 0,
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //活塞推动方块
+        "onPistonPush": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //耕地被破坏
+        "onFarmLandDecay": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //玩家操作展示框
+        "onUseFrameBlock": {
+            "LogToFile": 0,
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //计分项数值改变
+        "onScoreChange": {
+            "LogToFile": 0,
+            "LogToConsole": 0,
+            "NoOutputContent": []
+        },
+        //火焰蔓延
+        "onFireSpread": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        },
+        //控制台执行命令
+        "onConsoleCmd": {
+            "LogToFile": 1,
+            "LogToConsole": 1,
+            "NoOutputContent": []
+        }
+    }
+}
